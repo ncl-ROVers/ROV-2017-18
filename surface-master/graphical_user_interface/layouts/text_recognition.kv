@@ -1,0 +1,84 @@
+TextRecognitionScreen:
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        GridLayout:
+            cols: 3
+            size_hint_y: 0.8
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Image:
+                    id: frame
+
+                Label:
+                    text: "Initial frame"
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Image:
+                    id: gray
+
+                Label:
+                    text: "Gray scale"
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Image:
+                    id: bitwise
+
+                Label:
+                    text: "Bitwise gray scale"
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Image:
+                    id: thresh
+
+                Label:
+                    text: "Threshed"
+
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Image:
+                    id: rotated
+
+                Label:
+                    text: "Image rotated"
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Image:
+                    id: kernel
+
+                Label:
+                    text: "Kernel"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.2
+
+            ScrollView:
+                size_hint_x: 0.6
+                Label:
+                    id: recognised_text
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: 'left'
+                    valign: 'top'
+
+            Label:
+                id: result
+                size_hint_x: 0.4
+                text_size: self.size
+                halign: 'center'
+                valign: 'center'

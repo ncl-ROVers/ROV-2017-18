@@ -1,0 +1,25 @@
+ArmControlsScreen:
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Button:
+                text: 'Arm Controls'
+                size_hint_y: 0.70
+
+            ScrollView:
+                size_hint_y: 0.3
+                Label:
+                    id: data
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    text: ''
+                    halign: 'left'
+                    valign: 'top'
+                    markup: True
+
+        BoxLayout:

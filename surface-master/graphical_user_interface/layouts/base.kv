@@ -1,0 +1,38 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+BoxLayout:
+    orientation: 'vertical'
+
+    ActionBar:
+
+        ActionView:
+
+            ActionPrevious:
+                with_previous: True
+                on_release: app.switch_back()
+                title: "Newcastle ROV 2018"
+
+            ActionGroup:
+
+                ActionButton:
+                    text: 'Video stream'
+                    on_release: app.switch_to(app.video_stream)
+
+                ActionButton:
+                    text: 'Vehicle controls'
+                    on_release: app.switch_to(app.vehicle_controls)
+
+                ActionButton:
+                    text: 'Arm controls'
+                    on_release: app.switch_to(app.arm_controls)
+
+                ActionButton:
+                    text: 'Flight data'
+                    on_release: app.switch_to(app.flight_data)
+    BoxLayout:
+        padding: 32
+
+        ScreenManager:
+            id: sm
+            transition: NoTransition()
+            padding: 32

@@ -1,0 +1,96 @@
+FlightDataScreen:
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 8
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Input'
+                size_hint_y: 0.1
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: 0.4
+
+                GridLayout:
+                    cols: 2
+                    size_hint_y: 0.6
+
+                    TextInput:
+                        id: plane_angle
+                        hint_text: 'Plane angle'
+                        text: '184'
+
+                    TextInput:
+                        id: ascent_speed
+                        hint_text: 'Ascent speed'
+                        text: '93'
+
+                    TextInput:
+                        id: ascent_rate
+                        hint_text: 'Ascent rate'
+                        text: '10'
+
+                    TextInput:
+                        id: time
+                        hint_text: 'Time'
+                        text: '43'
+
+                    TextInput:
+                        id: descent_speed
+                        hint_text: 'Descent speed'
+                        text: '64'
+
+                    TextInput:
+                        id: descent_rate
+                        hint_text: 'Descent rate'
+                        text: '6'
+
+                    TextInput:
+                        id: wind_angle
+                        hint_text: 'Wind angle'
+                        text: '270'
+
+                    TextInput:
+                        id: wind_equation
+                        hint_text: 'Wind Equation'
+                        text: '-1/720*t^2+25'
+
+                Spinner:
+                    id: location
+                    size_hint_y: 0.2
+                    values: ["Renton Airfield", "Naval Air Station Sand Point"]
+
+                Button:
+                    text: 'calculate flight data'
+                    on_release: root.update()
+                    size_hint_y: 0.2
+
+            Label:
+                text: 'Calculations'
+                size_hint_y: 0.1
+
+            ScrollView:
+                size_hint_y: 0.4
+                Label:
+                    id: data
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    text: ''
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            MapView:
+                id: map_view
+
+            Label:
+                text: 'Final crash zone data'
+                size_hint_y: 0.1
+
+            Label:
+                size_hint_y: 0.1

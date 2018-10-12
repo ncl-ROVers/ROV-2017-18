@@ -1,0 +1,36 @@
+VideoStreamScreen:
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 8
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 16
+
+            Image:
+                id: vs
+                size_hint_y: 0.8
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.2
+
+                Button:
+                    text: "View shape recognition screen"
+                    on_release: app.switch_to(app.shape_recognition)
+                    size_hint_x: 0.50
+
+                Button:
+                    text: "View text recognition screen"
+                    on_release: app.switch_to(app.text_recognition)
+                    on_release: app.text_recognition.update()
+                    size_hint_x: 0.50
+
+        Label:
+            id: data
+            text_size: self.size
+            halign: 'left'
+            valign: 'top'
+            markup: True
+            size_hint_x: 0.50
